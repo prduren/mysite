@@ -22,10 +22,10 @@ h3 {
 }
 
 .main {
-    outline: 2px dotted #796755;
+    outline: 2px solid #796755;
     padding: 50px;
     min-height: 20vh;
-    width: 70%
+    width: 70%;
 }
 
 li {
@@ -76,6 +76,18 @@ a {
     overflow: scroll; /* Hide scrollbars */
 }
 
+/*
+.topborder {
+    position: sticky;
+    left: 0px; 
+    top: 0px; 
+    width: 71%;
+    padding: 10px 50px 10px 50px;
+    height: 5px; 
+    background-color: #796755;
+}
+*/
+
 @media only screen and (max-width: 600px) {
     .center-screen {
         min-height: 0vh;
@@ -84,10 +96,9 @@ a {
         padding: 10px;
     }
     .main {
-        outline: 2px dotted #796755;
-        padding: 0px;
+        outline: 2px solid #796755;
         min-height: 0vh;
         min-width: 70%;
-        padding: 10px;
+        padding: 20px;
     }
 }
