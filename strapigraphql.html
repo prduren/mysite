@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Parker Duren</title>
+</head>
+<body>
+    <div class="center-screen">
+        <a href="index.html">[go home]</a>
+        <h3>Strapi GraphQL Plugin Duplication Issue Resolutions</h3>
+        <div class="main">
+            <body class= "blogbody">
+               Strapi version 4.x throws an error when attempting to run a Strapi server <code>npm run develop</code> with graphql (16.8.1) installed:
+               <br><br>
+               <code>
+                    Cannot use GraphQLScalarType "Time" from another module or realm.
+
+                    Ensure that there is only one instance of "graphql" in the node_modules
+                    directory. If different versions of "graphql" are the dependencies of other
+                    relied on modules, use "resolutions" to ensure only one version is installed.
+                </code>
+                <br><br>
+                I resolved this by deleting the <code>node_modules</code> folder, placing the below in <code>package.json</code> to override the conflicting GraphQL version it is complaining about (can be found with <code>npm list graphql</code>):
+                <br><br>
+                "overrides": {
+                    "@strapi/plugin-graphql": {
+                    "graphql": "16.8.1"
+                    }
+                  },
+                <br><br>
+                then running <code>npm install</code> again.
+                
+            </body>
+        </div>
+        <a href="index.html">[go home]</a>
+        <div class="imagediv">
+            <img class="footerimg" src="tea.png">
+            <img class="footerimg" src="caterpillar.png">
+            <img class="footerimg" src="moon.png">
+            <img class="footerimg" src="stickbug.png">
+            <img class="footerimg" src="toothlesscrocodile.png">
+        </div>
+    </div>
+</body>
+</html>
