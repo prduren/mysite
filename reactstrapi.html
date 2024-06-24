@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Parker Duren</title>
+  </head>
+  <body>
+    <div class="center-screen">
+      <a href="index.html">[go home]</a>
+      <h3>Creating React frontend with Strapi backend</h3>
+      <div class="main">
+        <body class="blogbody">
+          <p>
+            I will be explaining at a high level how to initialize a React
+            frontend based project with a Strapi backend (with optional cloud
+            PostgreSQL via neon.tech and Cloudinary for image hosting). You may
+            want to achieve something similar to this if you want to build a
+            site for a client and allow them to add their own content via
+            Strapi.
+          </p>
+          <h4 style="text-decoration: underline">React frontend</h4>
+          <p>
+            Initialize a create-react-app project after CDing to a folder of
+            your choice:
+          </p>
+          <code>npx create-react-app my-app</code>
+          <p>cd into that new project and run the React server locally:</p>
+          <code>
+            cd my-app
+            <br />
+            npm start
+          </code>
+          <br />
+          <p style="text-decoration: underline">
+            Notes on deploying React to Cloudflare:
+          </p>
+          <ul>
+            <li>Domain can be registered on Cloudflare</li>
+            <li>
+              Build command:
+              <code>npm run build</code>
+            </li>
+            <li>
+              If you are using a monorepo, ensure root directory is set to
+              directory of your react app.
+            </li>
+            <li>
+              Don’t be afraid if your project doesn’t deploy first try.
+              Cloudflare seems to be integrated with something strict that your
+              local project may not catch (e.g. failing build due to == instead
+              of === somewhere in your project)
+            </li>
+          </ul>
+          <h4 style="text-decoration: underline">Strapi backend:</h4>
+          <p>
+            Initialize a Strapi project after CDing to a folder of your choice:
+          </p>
+          <code>
+            npx create-strapi-app@latest my-strapi-project --quickstart
+          </code>
+          <br />
+          <p>Then, create admin account and get started in Strapi.</p>
+          <p style="text-decoration: underline">Notes on Strapi</p>
+          <ul>
+            <li>
+              Default 1337 port on localhost can be changed in .env file under
+              PORT. Run
+              <code>npm run build</code>
+              then
+              <code>npm run develop</code>
+              afterwards to refresh the server.
+            </li>
+            <li>
+              Though outdated using Strapi 3,
+              <a
+                href="https://www.youtube.com/watch?v=4Ntd414raYc&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&ab_channel=NetNinja"
+                target="_blank"
+              >
+                this
+              </a>
+              Strapi Crash Course by Net Ninja is good info for setting up
+              Strapi in terms of permissions and calling the Strapi API via
+              GraphQL. Check comments for Strapi 4 queries and code.
+            </li>
+          </ul>
+          <h4 style="text-decoration: underline">Deploying Strapi to Render</h4>
+          <ul>
+            <li>
+              I recommend doing this sooner rather than later. If you’re using
+              the free version of Render, then SQLite isn’t going to cut it due
+              to Strapi utilizing that on the backend by default, and Render
+              essentially killing SQLite and anything else on disk after some
+              inactivity (if you pay for any tier on Render the site will remain
+              up and not have to cold start and you can use SQLite just fine).
+            </li>
+            <li>
+              This is about as straightforward as deploying a Javascript site to
+              Cloudflare.
+            </li>
+            <li style="text-decoration: underline">
+              If using free tier of Render, you will have to deploy databases to
+              something cloud based/persistent instead.
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=lBQxrvLFnII&ab_channel=LearningwithGideon"
+                target="_blank"
+              >
+                This
+              </a>
+              Strapi/Gatsbi tutorial from Learning with Gideon details deploying
+              Strapi to Render (#6), then migrating SQLite databases to
+              Neon.tech PostgreSQL databases (#7).
+            </li>
+          </ul>
+          <h4 style="text-decoration: underline">
+            Image hosting via Cloudinary
+          </h4>
+          <ul>
+            <li>
+              Use a tutorial like
+              <a
+                href="https://strapi.io/blog/add-cloudinary-support-to-your-strapi-application"
+              >
+                this
+              </a>
+              or
+              <a
+                href="https://market.strapi.io/providers/@strapi-provider-upload-cloudinary"
+              >
+                this
+              </a>
+              to set up Cloudinary with Strapi. Essentially images all likely
+              need to be hosted on an image hosting service rather than directly
+              on Render due to bandwidth and usage requirements.
+            </li>
+            <li>
+              Image sizing when uploading to Cloudinary can be defined in
+              plugins.js in your Strapi folder. Here is mine:
+              <pre><code>module.exports = ({ env }) => ({
+                upload: {
+                  config: {
+                    provider: "cloudinary",
+                    providerOptions: {
+                      cloud_name: env("CLOUDINARY_NAME"),
+                      api_key: env("CLOUDINARY_KEY"),
+                      api_secret: env("CLOUDINARY_SECRET"),
+                    },
+                    actionOptions: {
+                      upload: {},
+                      uploadStream: {},
+                      delete: {},
+                    },
+                  },
+                  images: {
+                    formats: {
+                      small: { width: 500, height: 500 },
+                      medium: { width: 1000, height: 1000 },
+                    },
+                  },
+                },
+              });
+              </code></pre>
+            </li>
+            <li>
+              I have run into issues with Cloudinary not uploading all of my
+              defined image formats. This can break code if you have statically
+              defined specific sizes for an img element. Be sure to add some
+              fail safes for rendering different image sizes if one may not
+              exist at some point in time if users will be uploading images to
+              Strapi post deployment.
+            </li>
+          </ul>
+        </body>
+      </div>
+    </div>
+  </body>
+</html>
