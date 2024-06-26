@@ -85,6 +85,19 @@
               Strapi in terms of permissions and calling the Strapi API via
               GraphQL. Check comments for Strapi 4 queries and code.
             </li>
+            <li>
+              GraphQL queries in Strapi currently default to pagination of 10.
+              If you're seeing only 10 of something, change pagination of that
+              item in your query. For example:
+              <code>
+                <br />
+                ...
+                <br />
+                img(pagination: { limit: 100 })
+                <br />
+                ...
+              </code>
+            </li>
           </ul>
           <h4 style="text-decoration: underline">Deploying Strapi to Render</h4>
           <ul>
