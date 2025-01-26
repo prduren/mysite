@@ -12,12 +12,50 @@
   align-items: center;
   text-align: left;
   background-color: black;
+  max-width: 90vw;
+  max-height: 90vh;
+  align-self: center;
+  margin: 0 auto 0 auto;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.github a {
+  color: hotpink;
+}
+
+.cursor {
+  width: 5px;
+  height: 1.2em;
+  background-color: #0f0;
+  margin-left: 5px;
+  animation: blink 1s steps(1) infinite;
+  align-self: center;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.itch a {
+  color: #00ff00;
+}
+
+.sun2 a {
+  color: #ffff00;
 }
 
 body {
   overflow: hidden; /* Hide scrollbars */
   background-color: black;
   font-size: 24px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 200;
 }
 
 h3 {
@@ -61,12 +99,12 @@ h3 {
 
 li {
   text-align: left;
-  list-style-type: trad-chinese-informal;
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
-  color: #49a078;
+  color: white;
 }
 
 .footerimg {
