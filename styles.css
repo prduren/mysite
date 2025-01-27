@@ -4,18 +4,77 @@
   background-color: black;
 }
 
+button {
+  text-decoration: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.screen-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 300vw;
+  height: 300vh;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease-in-out;
+}
+
 .center-screen {
   display: grid;
   grid-template-columns: 1fr 9fr 1fr;
   grid-template-rows: 1fr 9fr 1fr;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
   justify-content: center;
   align-items: center;
   text-align: left;
   background-color: black;
-  max-width: 90vw;
-  max-height: 90vh;
+  width: 100vw;
+  height: 100vh;
   align-self: center;
   margin: 0 auto 0 auto;
+}
+
+.up-screen {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+}
+
+.right-screen {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+}
+
+.down-screen {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
+}
+
+.left-screen {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-self: center;
 }
 
 .headerTitle {
