@@ -166,6 +166,10 @@ a {
   color: white;
 }
 
+p {
+  color: white;
+}
+
 .footerimg {
   display: block;
   float: left;
@@ -202,10 +206,15 @@ a {
   align-items: left;
   text-align: left;
   overflow: scroll; /* Hide scrollbars */
+  color: white;
 }
 
 .arrow {
   color: white;
+}
+
+.arrow:hover {
+  cursor: pointer;
 }
 
 /*
