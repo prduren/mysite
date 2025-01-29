@@ -46,7 +46,7 @@ button {
   grid-row: 1 / span 1;
   width: 100vw;
   height: 100vh;
-  background-color: red;
+  background-color: gray;
 }
 
 .right-screen {
@@ -54,7 +54,7 @@ button {
   grid-row: 2 / span 1;
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+  background-color: grey;
 }
 
 .down-screen {
@@ -62,7 +62,7 @@ button {
   grid-row: 3 / span 1;
   width: 100vw;
   height: 100vh;
-  background-color: green;
+  background-color: gray;
 }
 
 .left-screen {
@@ -70,7 +70,7 @@ button {
   grid-row: 2 / span 1;
   width: 100vw;
   height: 100vh;
-  background-color: yellow;
+  background-color: gray;
   justify-content: center;
   align-items: center;
   text-align: center;
