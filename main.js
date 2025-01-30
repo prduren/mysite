@@ -226,3 +226,17 @@ downArrowButton2.addEventListener('click', () => {
 });
 
 //#endregion
+
+//#region Secret
+
+document
+  .getElementById('secretInput')
+  .addEventListener('keydown', function (event) {
+    console.log('got key down');
+    if (event.key === 'Enter' && this.value === '4815162342') {
+      console.log('secret entered');
+      document.getElementById('secretScreen').style.display = 'block';
+    }
+  });
+
+//#endregion

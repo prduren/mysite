@@ -49,6 +49,10 @@ button {
   background-color: gray;
 }
 
+#secretScreen {
+  display: none;
+}
+
 .right-screen {
   grid-column: 3 / span 1;
   grid-row: 2 / span 1;
@@ -65,16 +69,39 @@ button {
   background-color: gray;
 }
 
+#secretpw {
+  position: absolute;
+  bottom: 0;
+}
+
 .left-screen {
+  display: flex;
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
   width: 100vw;
   height: 100vh;
-  background-color: gray;
-  justify-content: center;
+  background-color: black;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  align-self: center;
+  position: relative;
+}
+
+#dydanImg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+#textDydan {
+  position: absolute;
+  color: white;
+  transform: rotate(5deg);
+}
+
+#textDydan li {
+  margin-bottom: 2rem;
 }
 
 .headerTitle {
@@ -142,6 +169,11 @@ h3 {
 .leftArrow {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
+}
+
+.rightArrow2 {
+  margin-left: auto;
+  flex-grow: 0;
 }
 
 .upArrow {
