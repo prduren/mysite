@@ -104,6 +104,50 @@ button {
   margin-bottom: 2rem;
 }
 
+#deadkz {
+  position: absolute;
+  width: 5%;
+  height: auto;
+  top: 70%;
+  left: 40%;
+}
+
+#runkz {
+  position: absolute;
+  width: 4%;
+  height: auto;
+  top: 40%;
+  left: 75%;
+  transform: skew(-40deg);
+}
+
+#runkz2 {
+  position: absolute;
+  width: 5%;
+  height: auto;
+  top: 60%;
+  left: 75%;
+  transform: skew(-30deg);
+}
+
+#runkz3 {
+  position: absolute;
+  width: 8%;
+  height: auto;
+  top: 95%;
+  left: 80%;
+  transform: skew(-40deg) scaleX(-1);
+}
+
+#runkz4 {
+  position: absolute;
+  width: 5%;
+  height: auto;
+  top: 60%;
+  left: 10%;
+  transform: skew(-30deg);
+}
+
 .headerTitle {
   display: flex;
   flex-direction: row;
