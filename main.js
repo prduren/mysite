@@ -240,3 +240,19 @@ document
   });
 
 //#endregion
+
+//#region Carousel
+const track = document.querySelector('.carousel-track');
+let index = 0;
+
+function nextSlide() {
+  index++;
+  if (index >= track.children.length) {
+    index = 0; // loops back to first img
+  }
+  track.style.transform = `translateX(${-index * 100}vw)`;
+}
+
+setInterval(nextSlide, 5000);
+
+//#endregion
