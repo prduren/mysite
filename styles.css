@@ -4,6 +4,16 @@
   background-color: black;
 }
 
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  font-size: 10px;
+  opacity: 0.8;
+  user-select: none;
+  pointer-events: none;
+}
+
 button {
   text-decoration: none;
   background: none;
@@ -42,15 +52,33 @@ button {
 }
 
 .up-screen {
+  position: relative;
   grid-column: 2 / span 1;
   grid-row: 1 / span 1;
   width: 100vw;
   height: 100vh;
-  background-color: gray;
+  background-color: darkslategray;
+}
+
+.downArrow2 {
+  position: absolute;
+  margin-top: 1rem;
+  bottom: 0;
+  left: 50%;
 }
 
 #secretScreen {
   display: none;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.snowflakeButton {
+  padding: 1rem;
 }
 
 .right-screen {
@@ -92,11 +120,19 @@ button {
 }
 
 .down-screen {
+  position: relative;
   grid-column: 2 / span 1;
   grid-row: 3 / span 1;
   width: 100vw;
   height: 100vh;
-  background-color: gray;
+  background-color: darkslategray;
+}
+
+.upArrow2 {
+  position: absolute;
+  margin-top: 1rem;
+  top: 0;
+  left: 50%;
 }
 
 #secretpw {

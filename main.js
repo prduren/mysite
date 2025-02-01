@@ -7,6 +7,7 @@ const leftArrowButton2 = document.querySelector('.leftArrow2');
 const rightArrowButton2 = document.querySelector('.rightArrow2');
 const upArrowButton2 = document.querySelector('.upArrow2');
 const downArrowButton2 = document.querySelector('.downArrow2');
+const snowflakeButton = document.querySelector('.snowflakeButton');
 
 let screenState = 'center';
 let screenStateCounter = 0;
@@ -254,5 +255,40 @@ function nextSlide() {
 }
 
 setInterval(nextSlide, 5000);
+
+//#endregion
+
+//#region Snowflake
+
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.innerHTML = '&#10052;';
+  snowflake.classList.add('snowflake');
+  document.body.appendChild(snowflake);
+
+  const size = Math.random() * 10 + 10;
+  const startX = Math.random() * window.innerWidth;
+  snowflake.style.fontSize = `${size}px`;
+  snowflake.style.left = `${startX}px`;
+
+  const duration = Math.random() * 3 + 2;
+
+  snowflake.animate(
+    [
+      { transform: `translateY(0px)`, opacity: 1 },
+      { transform: `translateY(${window.innerHeight}px)`, opacity: 0 },
+    ],
+    {
+      duration: duration * 1000,
+      easing: 'linear',
+    }
+  ).onfinish = () => snowflake.remove(); // remove after anim for performance
+
+  setTimeout(createSnowflake, Math.random() * 300);
+}
+
+snowflakeButton.addEventListener('click', () => {
+  createSnowflake();
+});
 
 //#endregion
