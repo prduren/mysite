@@ -221,13 +221,13 @@ button {
 }
 
 .github a {
-  color: hotpink;
+  color: #bcabae;
 }
 
 .cursor {
   width: 5px;
   height: 1.2em;
-  background-color: #0f0;
+  background-color: #716969;
   margin-left: 5px;
   animation: blink 1s steps(1) infinite;
   align-self: center;
@@ -240,11 +240,11 @@ button {
 }
 
 .itch a {
-  color: #00ff00;
+  color: #716969;
 }
 
 .sun2 a {
-  color: #ffff00;
+  color: #fbfbfb;
 }
 
 body {
@@ -292,12 +292,14 @@ h3 {
   grid-column: 2 / span 1;
   grid-row: 1 / span 1;
   text-align: center;
+  display: none;
 }
 
 .downArrow {
   grid-column: 2 / span 1;
   grid-row: 3 / span 1;
   text-align: center;
+  display: none;
 }
 
 .missRight {

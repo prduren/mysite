@@ -120,111 +120,111 @@ rightArrowButton2.addEventListener('click', () => {
 
 // up movement
 
-upArrowButton.addEventListener('click', () => {
-  if (screenState === 'center') {
-    screenState = 'up';
-    y = +1;
-    grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
-      y * 100
-    }vh))`;
-  } else if (screenState === 'down') {
-    screenState = 'center';
-    y = +1;
-    grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
-      y * 100
-    }vh))`;
-  }
-});
+// upArrowButton.addEventListener('click', () => {
+//   if (screenState === 'center') {
+//     screenState = 'up';
+//     y = +1;
+//     grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
+//       y * 100
+//     }vh))`;
+//   } else if (screenState === 'down') {
+//     screenState = 'center';
+//     y = +1;
+//     grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
+//       y * 100
+//     }vh))`;
+//   }
+// });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowUp') {
-    if (screenState === 'center') {
-      screenState = 'up';
-      y += 1;
-      grid.style.transform = `translate(calc(-50% + ${
-        x * 100
-      }vw), calc(-50% + ${y * 100}vh))`;
-    } else if (screenState === 'down') {
-      screenState = 'center';
-      y += 1;
-      grid.style.transform = `translate(calc(-50% + ${
-        x * 100
-      }vw), calc(-50% + ${y * 100}vh))`;
-    }
-  }
-});
+// document.addEventListener('keydown', (e) => {
+//   if (e.key === 'ArrowUp') {
+//     if (screenState === 'center') {
+//       screenState = 'up';
+//       y += 1;
+//       grid.style.transform = `translate(calc(-50% + ${
+//         x * 100
+//       }vw), calc(-50% + ${y * 100}vh))`;
+//     } else if (screenState === 'down') {
+//       screenState = 'center';
+//       y += 1;
+//       grid.style.transform = `translate(calc(-50% + ${
+//         x * 100
+//       }vw), calc(-50% + ${y * 100}vh))`;
+//     }
+//   }
+// });
 
-// up 2 movement (down screen)
+// // up 2 movement (down screen)
 
-upArrowButton2.addEventListener('click', () => {
-  if (screenState === 'center') {
-    screenState = 'up';
-    y += 1;
-    grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
-      y * 100
-    }vh))`;
-  } else if (screenState === 'down') {
-    screenState = 'center';
-    y += 1;
-    grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
-      y * 100
-    }vh))`;
-  }
-});
+// upArrowButton2.addEventListener('click', () => {
+//   if (screenState === 'center') {
+//     screenState = 'up';
+//     y += 1;
+//     grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
+//       y * 100
+//     }vh))`;
+//   } else if (screenState === 'down') {
+//     screenState = 'center';
+//     y += 1;
+//     grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
+//       y * 100
+//     }vh))`;
+//   }
+// });
 
-// down movement
+// // down movement
 
-downArrowButton.addEventListener('click', () => {
-  if (screenState === 'center') {
-    screenState = 'down';
-    y = -1;
-    grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
-      y * 100
-    }vh))`;
-  } else if (screenState === 'up') {
-    screenState = 'center';
-    y = -1;
-    grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
-      y * 100
-    }vh))`;
-  }
-});
+// downArrowButton.addEventListener('click', () => {
+//   if (screenState === 'center') {
+//     screenState = 'down';
+//     y = -1;
+//     grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
+//       y * 100
+//     }vh))`;
+//   } else if (screenState === 'up') {
+//     screenState = 'center';
+//     y = -1;
+//     grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
+//       y * 100
+//     }vh))`;
+//   }
+// });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowDown') {
-    if (screenState === 'center') {
-      screenState = 'down';
-      y -= 1;
-      grid.style.transform = `translate(calc(-50% + ${
-        x * 100
-      }vw), calc(-50% + ${y * 100}vh))`;
-    } else if (screenState === 'up') {
-      screenState = 'center';
-      y -= 1;
-      grid.style.transform = `translate(calc(-50% + ${
-        x * 100
-      }vw), calc(-50% + ${y * 100}vh))`;
-    }
-  }
-});
+// document.addEventListener('keydown', (e) => {
+//   if (e.key === 'ArrowDown') {
+//     if (screenState === 'center') {
+//       screenState = 'down';
+//       y -= 1;
+//       grid.style.transform = `translate(calc(-50% + ${
+//         x * 100
+//       }vw), calc(-50% + ${y * 100}vh))`;
+//     } else if (screenState === 'up') {
+//       screenState = 'center';
+//       y -= 1;
+//       grid.style.transform = `translate(calc(-50% + ${
+//         x * 100
+//       }vw), calc(-50% + ${y * 100}vh))`;
+//     }
+//   }
+// });
 
-// down 2 movement (up screen)
+// // down 2 movement (up screen)
 
-downArrowButton2.addEventListener('click', () => {
-  if (screenState === 'center') {
-    screenState = 'down';
-    y -= 1;
-    grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
-      y * 100
-    }vh))`;
-  } else if (screenState === 'up') {
-    screenState = 'center';
-    y -= 1;
-    grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
-      y * 100
-    }vh))`;
-  }
-});
+// downArrowButton2.addEventListener('click', () => {
+//   if (screenState === 'center') {
+//     screenState = 'down';
+//     y -= 1;
+//     grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
+//       y * 100
+//     }vh))`;
+//   } else if (screenState === 'up') {
+//     screenState = 'center';
+//     y -= 1;
+//     grid.style.transform = `translate(calc(-50% + ${x * 100}vw), calc(-50% + ${
+//       y * 100
+//     }vh))`;
+//   }
+// });
 
 //#endregion
 
