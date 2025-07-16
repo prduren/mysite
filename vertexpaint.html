@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Parker Duren</title>
+</head>
+<body>
+    <div class="center-screen">
+        <a href="index.html">[go home]</a>
+        <h3>Use vertex painted Blender model in Unity</h3>
+        <h4>Blender 4.2.1 ||| Unity 2022.3.44</h4>
+        <div class="main">
+            <body class= "blogbody">
+                    <p>• Paint your model in Blender via Vertex Paint mode</p>
+                    <p>• Export out the model to a .fbx. Default settings should be okay, but look out for "Apply Modifiers" being checked for sure.</p>
+                    <p>• Drop your .fbx in Unity. Shouldn't need to touch any import settings.</p>
+                    <p>• Create a new file, probably drop it in a Shaders folder, and pop in some custom shader code that should allow the Vertex Painting. Save as a .shader:</p>
+                    <code style = "color: plum">
+                                Shader "Custom/VertexColor"
+                                {
+                                    Properties {}
+                                    SubShader {
+                                        Tags { "RenderType"="Opaque" }
+                                        LOD 100
+
+                                        Pass {
+                                            CGPROGRAM
+                                            #pragma vertex vert
+                                            #pragma fragment frag
+                                            #include "UnityCG.cginc"
+
+                                            struct appdata {
+                                                float4 vertex : POSITION;
+                                                float4 color : COLOR;
+                                            };
+
+                                            struct v2f {
+                                                float4 pos : SV_POSITION;
+                                                float4 color : COLOR;
+                                            };
+
+                                            v2f vert (appdata v) {
+                                                v2f o;
+                                                o.pos = UnityObjectToClipPos(v.vertex);
+                                                o.color = v.color;
+                                                return o;
+                                            }
+
+                                            fixed4 frag (v2f i) : SV_Target {
+                                                return i.color;
+                                            }
+                                            ENDCG
+                                        }
+                                    }
+                                }
+                    </code>
+                    <p>• Apply your custom shader to a material in Unity</p>
+                    <p>• Apply the material with the custom shader to your fbx after dropping the fbx/prefab in your Unity scene</p>
+                    <p>voila!</p>
+            </body>
+        </div>
+        <a href="index.html">[go home]</a>
+        <div class="imagediv">
+            <img class="footerimg" src="tea.png">
+            <img class="footerimg" src="caterpillar.png">
+            <img class="footerimg" src="moon.png">
+            <img class="footerimg" src="stickbug.png">
+            <img class="footerimg" src="toothlesscrocodile.png">
+        </div>
+    </div>
+</body>
+</html>
