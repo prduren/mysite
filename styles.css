@@ -103,7 +103,7 @@ button {
 
 .carousel {
   flex-grow: 1;
-  width: 700%;
+  width: 1000%;
   height: 100%;
   overflow: hidden;
   position: relative;
